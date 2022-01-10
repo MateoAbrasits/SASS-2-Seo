@@ -1,0 +1,69 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;            
+}
+
+body{
+    background: linear-gradient(to right, white, cyan);
+}
+
+$bg_1:#4444ff;
+$bg_2:#000000;
+$bg_3: #ffc0cb;
+
+@mixin parrafos($fuente:30px, $text-aling:center, $text-decoration:none, $color:white, $bgc:black, $margin:20px){
+    text-align: $text-aling;
+    font-size: $fuente;
+    text-decoration: $text-decoration;
+    color: $color;
+    background-color: $bgc;
+    margin: $margin;
+    
+}
+
+.parrafo1{
+    @include parrafos;
+}
+
+.parrafo2{
+    @include parrafos(20px, left, underline, red, pink)
+}
+.parrafo3{
+    @include parrafos(70px, right, line-through, $bg_1, $bg_3)
+}
+
+.caja{
+    margin: 20px auto;
+    margin-top: 70px;
+    width: 700px;
+    height: 500px;
+    background-color: cadetblue;
+    margin-bottom: 100px;
+    
+    
+    
+    .caja1{
+        @extend .caja;
+        border: 10px solid black;
+    }
+
+    .caja2{
+        @extend .caja;
+        border: solid 15px blue;
+        background-color: navy;
+        color:yellow;
+    }
+}
+
+.imagen{
+    margin: 20px auto;
+    width: 400px;
+    margin-top: 700px;
+
+    img{
+        width: 100%;
+    }
+    
+    
+}
